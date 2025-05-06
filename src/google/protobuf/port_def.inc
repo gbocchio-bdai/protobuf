@@ -101,6 +101,12 @@
 // Portable check for minimum C++ language version:
 // https://en.cppreference.com/w/cpp/preprocessor/replace
 // https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros
+
+#define STRINGIFY_(x) #x
+#define STRINGIFY(x) STRINGIFY_(x)
+
+#pragma message "Compiling " STRINGIFY(__cplusplus)
+
 #if !defined(_MSVC_LANG)
 #define PROTOBUF_CPLUSPLUS_MIN(x) (__cplusplus >= x)
 #else
