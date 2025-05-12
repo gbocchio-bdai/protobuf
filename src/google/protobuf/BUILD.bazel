@@ -138,7 +138,7 @@ genrule(
             --proto_path=$$(dirname $$(dirname $$(dirname $(location any.proto)))) \
             $(SRCS)
     """,
-    exec_tools = ["//:protoc"],
+    tools = ["//:protoc"],
     visibility = ["//visibility:private"],
 )
 
@@ -732,6 +732,7 @@ exports_files(
     visibility = [
         "//:__pkg__",
         "//python:__pkg__",
+        "//ruby:__pkg__",
     ],
 )
 

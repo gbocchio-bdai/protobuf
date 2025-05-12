@@ -46,8 +46,11 @@ ruby_library(
     srcs = glob([
         "**/*.rb",
     ]),
-    deps = ["//:well_known_ruby_protos"],
-    includes = ["ruby/lib"],
+    deps = ["//ruby:well_known_ruby_protos"],
+    includes = [
+        "ruby",
+        "ruby/lib",
+    ],
     data = select({
         "@rules_ruby//ruby/runtime:config_jruby": ["protobuf_java.jar"],
         "@platforms//os:osx": ["protobuf_c.bundle"],
